@@ -7,7 +7,7 @@
     <title>{{ $pokemon['name'] }}</title>
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 </head>
-<body>
+<body >
         <div class="myCard">
             <div class="innerCard">
                 <div class="frontSide">
@@ -37,6 +37,21 @@
                 </div>
             </div>
         </div>
+        <script>
+            // Selecciona la tarjeta y el cuerpo del documento
+            const card = document.querySelector('.myCard');
+            const body = document.body;
+        
+            // Escucha cuando la tarjeta esté en hover (se voltea)
+            card.addEventListener('mouseenter', () => {
+                body.classList.add('flipped'); // Cambia el fondo al voltear
+            });
+        
+            // Escucha cuando el hover termina (la tarjeta vuelve a su posición original)
+            card.addEventListener('mouseleave', () => {
+                body.classList.remove('flipped'); // Restaura el fondo original
+            });
+        </script>
   
 </body>
 </html>

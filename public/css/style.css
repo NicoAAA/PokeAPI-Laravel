@@ -11,8 +11,15 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-color: #232323;
+    background-color: #fff700;
+    transition: background-color 0.5s ease; 
 }
+
+/* Clase para el fondo nuevo cuando la carta se voltea */
+body.flipped {
+    background-color: #1e3a8a; /* Fondo azul oscuro cuando la carta se voltee */
+}
+
 .img_pokemon {
     width: 200px;
     height: auto;
@@ -22,17 +29,17 @@ body {
 .titulo_de_pokemon {
     font-family: 'FatherBold', sans-serif;
     font-size: 30px;
-    color: #000000;
+    color: #f4d1d1;
 }
 .atrubutos_pokemon {
     font-family: 'FatherBold', sans-serif;
     font-size: 14px; 
-    color: #ffffff;  /* Cambiamos el color a blanco */
+    color: #3020df;  /* Cambiamos el color a blanco */
 }
 
 .backSide ul li {
     font-size: 12px; /* Reducido el tamaño de los ítems */
-    color: #FFD700;  /* Color dorado para los ítems */
+    color: #fee594;  /* Color dorado para los ítems */
     margin-bottom: 5px; /* Espacio entre los ítems */
 }
 
@@ -55,7 +62,6 @@ body {
     position: relative;
     width: 100%;
     height: 100%;
-    text-align: center;
     transition: transform 0.8s;
     transform-style: preserve-3d;
     cursor: pointer;
@@ -64,6 +70,8 @@ body {
 .myCard:hover .innerCard {
     transform: rotateY(180deg);
 }
+
+
 
 .frontSide,
 .backSide {
@@ -80,7 +88,7 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.8);
     border-radius: 1rem;
     color: white;
-    box-shadow: 0 0 0.3em rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 0.3em rgba(255, 166, 0, 0.726);
     font-family: 'FatherBold', sans-serif;
     font-weight: 700;
     padding: 10px; /* Añadimos un poco de padding para dar espacio interno */
@@ -117,7 +125,9 @@ body {
 
 .backSide,
 .backSide::before {
-    background-image: linear-gradient(160deg, #2C3E50 0%, #4CA1AF 100%);
+    background-image: linear-gradient(160deg, #64ed8f 0%, #41c7db 100%);
+    transform: rotateY(180deg);
+    transition: backgraund-color 0.5s ease;
 }
 
 .backSide {
@@ -138,6 +148,10 @@ body {
     border-radius: 1em;
     filter: blur(20px);
     animation: animate 5s linear infinite;
+}
+
+.myCard:hover .backSide {
+    background: linear-gradient(160deg, #1e3a8a 0%, #3b82f6 100%); /* Color nuevo al voltear */
 }
 
 @keyframes animate {
