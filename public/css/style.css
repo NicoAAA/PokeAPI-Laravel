@@ -12,6 +12,7 @@
     color: #ea0505;
 }
 
+
 .img_pokemon {
     filter: Drop-shadow(0 0 5px orange) drop-shadow(0 0 20px orange); /* Agrega sombra */
     width: 300px;   /* Cambia el ancho a 300 píxeles */
