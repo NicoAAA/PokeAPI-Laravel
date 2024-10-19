@@ -5,16 +5,151 @@
     font-style: normal;
 }
 
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #232323;
+}
+.img_pokemon {
+    width: 200px;
+    height: auto;
+    margin-top: 1px;
+}
 
 .titulo_de_pokemon {
     font-family: 'FatherBold', sans-serif;
     font-size: 30px;
-    color: #ea0505;
+    color: #000000;
+}
+.atrubutos_pokemon {
+    font-family: 'FatherBold', sans-serif;
+    font-size: 14px; 
+    color: #ffffff;  /* Cambiamos el color a blanco */
+}
+
+.backSide ul li {
+    font-size: 12px; /* Reducido el tamaño de los ítems */
+    color: #FFD700;  /* Color dorado para los ítems */
+    margin-bottom: 5px; /* Espacio entre los ítems */
 }
 
 
-.img_pokemon {
-    filter: Drop-shadow(0 0 5px orange) drop-shadow(0 0 20px orange); /* Agrega sombra */
-    width: 300px;   /* Cambia el ancho a 300 píxeles */
-    height: auto;   /* La altura se ajusta automáticamente */
+.myCard {
+    background-color: transparent;
+    width: 190px;
+    height: 254px;
+    perspective: 1000px;
+}
+
+.title {
+    font-size: 1.2em;
+    font-weight: 900;
+    text-align: center;
+    margin: 0;
+}
+
+.innerCard {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+}
+
+.myCard:hover .innerCard {
+    transform: rotateY(180deg);
+}
+
+.frontSide,
+.backSide {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 1rem;
+    color: white;
+    box-shadow: 0 0 0.3em rgba(255, 255, 255, 0.5);
+    font-family: 'FatherBold', sans-serif;
+    font-weight: 700;
+    padding: 10px; /* Añadimos un poco de padding para dar espacio interno */
+    overflow: hidden; /* Evitamos que el contenido se desborde */
+}
+
+.backSide ul {
+    margin: 0;
+    padding: 0;
+    
+    width: 100%; /* Para que ocupen todo el ancho de la tarjeta */ 
+}
+.backSide ul li {
+    flex: 1;
+
+    font-size: 12px;
+}
+.backSide .stats-abilities-container {
+    display: flex;
+    
+    width: 100%; /* Para que ocupe todo el ancho */
+}
+
+.backSide .stats-abilities-container .column {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.frontSide,
+.frontSide::before {
+      background: linear-gradient(43deg, #b21f1f 0%, #FDBB2D);
+}
+
+.backSide,
+.backSide::before {
+    background-image: linear-gradient(160deg, #2C3E50 0%, #4CA1AF 100%);
+}
+
+.backSide {
+      transform: rotateY(180deg);
+}
+
+
+.frontSide::before,
+.backSide::before {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    content: '';
+    width: 110%;
+    height: 110%;
+    position: absolute;
+    z-index: -1;
+    border-radius: 1em;
+    filter: blur(20px);
+    animation: animate 5s linear infinite;
+}
+
+@keyframes animate {
+    0% {
+        opacity: 0.3;
+    }
+
+    80% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0.3;
+    }
 }
