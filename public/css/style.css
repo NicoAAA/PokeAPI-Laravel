@@ -1,0 +1,19 @@
+@font-face {
+    font-family: 'FatherBold';
+    src: url('/fonts/FatherBold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+.titulo_de_pokemon {
+    font-family: 'FatherBold', sans-serif;
+    font-size: 30px;
+    color: #ea0505;
+}
+
+.img_pokemon {
+    filter: Drop-shadow(0 0 5px orange) drop-shadow(0 0 20px orange); /* Agrega sombra */
+    width: 300px;   /* Cambia el ancho a 300 píxeles */
+    height: auto;   /* La altura se ajusta automáticamente */
+}
